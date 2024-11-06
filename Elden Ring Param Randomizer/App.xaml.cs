@@ -23,6 +23,7 @@ namespace Elden_Ring_Param_Randomizer
                 MessageBox.Show($@"{Strings.NoOodleFoundException}
 {e.Exception.Message}", Strings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 e.Handled = true;
+                return;
             }
             MessageBox.Show(e.Exception.Message, Strings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             e.Handled = true;
