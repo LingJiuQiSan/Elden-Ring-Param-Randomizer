@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Elden_Ring_Param_Randomizer"
+        xmlns:mahspps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Elden Ring Param Randomizer"
+        Height="700"
+        Width="420"
+        FontSize="14">
+    <ScrollViewer
+        HorizontalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Auto">
+        <Canvas>
+            <TextBlock x:Name="Description" TextAlignment="Center" TextWrapping="Wrap" Text="Right Click CheckBox to Setting" Width="380" Height="30" Canvas.Left="10" Canvas.Bottom="90" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="Console" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap" Text="Waiting for regulation" Width="180" Height="30" Canvas.Left="10" Canvas.Bottom="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <Button x:Name="Browse" Content="Browse" Canvas.Right="10" Canvas.Bottom="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="180" Height="30" Click="Browse_Click"/>
+            <Button x:Name="Randomize" Content="Randomize" Canvas.Right="10" Canvas.Bottom="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="180" Height="30" Click="Randomize_OnClick"/>
+            <mahspps:NumericUpDown x:Name ="Seed" Minimum="-1" Maximum="2147483647" Value="-1" Interval="1" Width ="180" Canvas.Left="10" Canvas.Bottom="10" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Center"/>
+            <CheckBox x:Name="TalkParamMsgId" Content="Talk Param(Message)" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="TalkParamMsgId_OnMouseRightButtonDown"/>
+            <CheckBox x:Name="EquipParamWeaponWeight" Content="EquipParamWeapon(Weight)" Canvas.Left="10" Canvas.Top="40" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="EquipParamWeaponWeight_OnMouseRightButtonDown"/>
+            <CheckBox x:Name="EquipParamWeaponRequirement" Content="EquipParamWeapon(requirement)" Canvas.Left="10" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="False" MouseRightButtonDown="EquipParamWeaponRequirement_OnMouseRightButtonDown"></CheckBox>
+        </Canvas>
+    </ScrollViewer>
 </Window>

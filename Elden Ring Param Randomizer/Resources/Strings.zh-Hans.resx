@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Elden Ring Param Randomizer" xml:space="preserve">
+    <value>艾尔登法环参数随机化器</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Version" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Waiting for regulation" xml:space="preserve">
+    <value>等待选择规则文件中</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="Randomize" xml:space="preserve">
+    <value>随机化</value>
+  </data>
+  <data name="Talk Param(Message)" xml:space="preserve">
+    <value>Talk Param(显示的语言)</value>
+  </data>
+  <data name="EquipParamWeapon(Weight)" xml:space="preserve">
+    <value>EquipParamWeapon(武器重量)</value>
+  </data>
+  <data name="EquipParamWeapon(Requirement)" xml:space="preserve">
+    <value>EquipParamWeapon(武器属性要求)</value>
+  </data>
+  <data name="OpenFileDialogTitle" xml:space="preserve">
+    <value>选择regulartion.bin</value>
+  </data>
+  <data name="SameFolder" xml:space="preserve">
+    <value>警告：直接修改 Elden Ring 使用的 Regulation.bin 是不明智的，因为您可能会被禁止在线游戏。
+强烈建议您改用 Mod Engine 2 并修改 Regulation.bin 的副本。
+
+您确定要加载您选择的 Regulation.bin 吗？</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="File Selected" xml:space="preserve">
+    <value>规则文件已选择</value>
+  </data>
+  <data name="NoFileSelected" xml:space="preserve">
+    <value>未选择规则文件！</value>
+  </data>
+  <data name="NoParamSelected" xml:space="preserve">
+    <value>没选择任何一个参数！</value>
+  </data>
+  <data name="Decrypting Regulation" xml:space="preserve">
+    <value>解密规则中</value>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>完成！</value>
+  </data>
+  <data name="All done" xml:space="preserve">
+    <value>已全部完成！</value>
+  </data>
+  <data name="Randomization Finished" xml:space="preserve">
+    <value>随机化结束</value>
+  </data>
+  <data name="Loading ParamDefs" xml:space="preserve">
+    <value>加载ParamDefs中</value>
+  </data>
+  <data name="Handling Params" xml:space="preserve">
+    <value>处理参数中</value>
+  </data>
+  <data name="Modifying Params" xml:space="preserve">
+    <value>修改参数中</value>
+  </data>
+  <data name="Exporting Params" xml:space="preserve">
+    <value>导出参数中</value>
+  </data>
+  <data name="Weapon Weight Setting" xml:space="preserve">
+    <value>随机化武器重量上限设置</value>
+  </data>
+  <data name="Max weight(0.1~1000.0)" xml:space="preserve">
+    <value>最大重量(0.1~1000.0)</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="No Setting" xml:space="preserve">
+    <value>该参数没有设置！</value>
+  </data>
+  <data name="Right Click CheckBox to Setting" xml:space="preserve">
+    <value>右键选项进入设置</value>
+  </data>
+  <data name="Strength" xml:space="preserve">
+    <value>力气：</value>
+  </data>
+  <data name="Dexterity" xml:space="preserve">
+    <value>灵巧：</value>
+  </data>
+  <data name="Intelligence" xml:space="preserve">
+    <value>智力：</value>
+  </data>
+  <data name="Faith" xml:space="preserve">
+    <value>信仰：</value>
+  </data>
+  <data name="Arcane" xml:space="preserve">
+    <value>感应：</value>
+  </data>
+  <data name="Weapon Requirement Setting" xml:space="preserve">
+    <value>随机化武器属性上限设置</value>
+  </data>
+  <data name="NoOodleFoundException" xml:space="preserve">
+    <value>请将oo2core_6_win64.dll放入参数随机化器文件夹。</value>
+  </data>
+</root>
