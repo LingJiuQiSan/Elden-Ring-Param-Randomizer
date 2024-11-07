@@ -354,5 +354,14 @@ namespace Elden_Ring_Param_Randomizer
                 WeaponRequirement = requirement.Requirement;
             }
         }
+
+        private void EquipParamWeaponScaling_OnMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WeaponCorrect correct = new WeaponCorrect();
+            if (correct.ShowDialog() == true)
+            {
+                WeaponCorrect = correct.Scaling;
+            }
+        }
     }
 }

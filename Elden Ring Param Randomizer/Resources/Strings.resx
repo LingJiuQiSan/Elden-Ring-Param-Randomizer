@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root" xmlns="">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -121,7 +121,7 @@
     <value>Elden Ring Param Randomizer</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>v0.1.0</value>
+    <value>v0.1.1-Untested</value>
   </data>
   <data name="Waiting for regulation" xml:space="preserve">
     <value>Waiting for regulation</value>
@@ -224,5 +224,8 @@ Are you sure you want to load the Regulation.bin you selected?</value>
   </data>
   <data name="EquipParamWeapon(Scaling)" xml:space="preserve">
     <value>EquipParamWeapon(Scaling)</value>
+  </data>
+  <data name="Weapon Scaling Setting" xml:space="preserve">
+    <value>Weapon Scaling Setting</value>
   </data>
 </root>

@@ -342,7 +342,7 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to v0.1.0.
+        ///   Looks up a localized string similar to v0.1.1-Untested.
         /// </summary>
         internal static string Version {
             get {
@@ -365,6 +365,15 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         internal static string Weapon_Requirement_Setting {
             get {
                 return ResourceManager.GetString("Weapon Requirement Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weapon Scaling Setting.
+        /// </summary>
+        internal static string Weapon_Scaling_Setting {
+            get {
+                return ResourceManager.GetString("Weapon Scaling Setting", resourceCulture);
             }
         }
         

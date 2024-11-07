@@ -226,4 +226,7 @@
   <data name="EquipParamWeapon(Scaling)" xml:space="preserve">
     <value>EquipParamWeapon(补正)</value>
   </data>
+  <data name="Weapon Scaling Setting" xml:space="preserve">
+    <value>随机化武器补正上限设置</value>
+  </data>
 </root>
