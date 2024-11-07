@@ -11,7 +11,7 @@ namespace Elden_Ring_Param_Randomizer.Settings
 
         public int[] Requirement = new int[5];
 
-        public WeaponRequirement()
+        public WeaponRequirement(int[] requirement)
         {
             InitializeComponent();
             Title = Strings.Weapon_Requirement_Setting;
@@ -21,6 +21,12 @@ namespace Elden_Ring_Param_Randomizer.Settings
             Faith.Text = Strings.Faith;
             Arcane.Text = Strings.Arcane;
             Confirm.Content = Strings.Confirm;
+            Requirement = requirement;
+            StrengthRange.Value = requirement[0];
+            DexterityRange.Value = requirement[1];
+            IntelligenceRange.Value = requirement[2];
+            FaithRange.Value = requirement[3];
+            ArcaneRange.Value = requirement[4];
         }
 
         private void Confirm_OnClick(object sender, RoutedEventArgs e)

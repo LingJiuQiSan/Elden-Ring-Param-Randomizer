@@ -339,16 +339,16 @@ namespace Elden_Ring_Param_Randomizer
 
         private void EquipParamWeaponWeight_OnMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WeaponWeight weaponWeight = new WeaponWeight();
+            WeaponWeight weaponWeight = new WeaponWeight(MaxWeaponWeight);
             if (weaponWeight.ShowDialog() == true)
             {
-                MaxWeaponWeight = weaponWeight.UserInput;
+                MaxWeaponWeight = weaponWeight.MaxWeaponWeight;
             }
         }
 
         private void EquipParamWeaponRequirement_OnMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WeaponRequirement requirement = new WeaponRequirement();
+            WeaponRequirement requirement = new WeaponRequirement(WeaponRequirement);
             if (requirement.ShowDialog() == true)
             {
                 WeaponRequirement = requirement.Requirement;
@@ -357,7 +357,7 @@ namespace Elden_Ring_Param_Randomizer
 
         private void EquipParamWeaponScaling_OnMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WeaponCorrect correct = new WeaponCorrect();
+            WeaponCorrect correct = new WeaponCorrect(WeaponCorrect);
             if (correct.ShowDialog() == true)
             {
                 WeaponCorrect = correct.Scaling;
