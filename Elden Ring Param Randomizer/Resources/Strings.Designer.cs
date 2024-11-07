@@ -342,7 +342,7 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to v0.1.1-Untested.
+        ///   Looks up a localized string similar to v0.1.2-Untested.
         /// </summary>
         internal static string Version {
             get {

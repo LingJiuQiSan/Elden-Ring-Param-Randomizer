@@ -224,7 +224,7 @@
     <value>请将oo2core_6_win64.dll放入参数随机化器文件夹。</value>
   </data>
   <data name="EquipParamWeapon(Scaling)" xml:space="preserve">
-    <value>EquipParamWeapon(补正)</value>
+    <value>EquipParamWeapon(武器补正)</value>
   </data>
   <data name="Weapon Scaling Setting" xml:space="preserve">
     <value>随机化武器补正上限设置</value>
