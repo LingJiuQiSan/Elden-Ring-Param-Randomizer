@@ -21,7 +21,8 @@
             <mahspps:NumericUpDown x:Name ="Seed" Minimum="-1" Maximum="2147483647" Value="-1" Interval="1" Width ="180" Canvas.Left="10" Canvas.Bottom="10" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Center"/>
             <CheckBox x:Name="TalkParamMsgId" Content="Talk Param(Message)" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="TalkParamMsgId_OnMouseRightButtonDown"/>
             <CheckBox x:Name="EquipParamWeaponWeight" Content="EquipParamWeapon(Weight)" Canvas.Left="10" Canvas.Top="40" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="EquipParamWeaponWeight_OnMouseRightButtonDown"/>
-            <CheckBox x:Name="EquipParamWeaponRequirement" Content="EquipParamWeapon(requirement)" Canvas.Left="10" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="False" MouseRightButtonDown="EquipParamWeaponRequirement_OnMouseRightButtonDown"></CheckBox>
+            <CheckBox x:Name="EquipParamWeaponRequirement" Content="EquipParamWeapon(Requirement)" Canvas.Left="10" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="False" MouseRightButtonDown="EquipParamWeaponRequirement_OnMouseRightButtonDown"></CheckBox>
+            <CheckBox x:Name="EquipParamWeaponScaling" Content="EquipParamWeapon(Scaling)" Canvas.Left="10" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True"></CheckBox>
         </Canvas>
     </ScrollViewer>
 </Window>

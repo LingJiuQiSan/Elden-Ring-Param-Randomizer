@@ -223,4 +223,7 @@
   <data name="NoOodleFoundException" xml:space="preserve">
     <value>请将oo2core_6_win64.dll放入参数随机化器文件夹。</value>
   </data>
+  <data name="EquipParamWeapon(Scaling)" xml:space="preserve">
+    <value>EquipParamWeapon(补正)</value>
+  </data>
 </root>

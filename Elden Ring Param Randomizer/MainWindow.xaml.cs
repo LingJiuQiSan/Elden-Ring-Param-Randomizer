@@ -17,9 +17,11 @@ namespace Elden_Ring_Param_Randomizer
 
         private string RegulationPath { get; set; } = "";
 
-        public float MaxWeaponWeight { get; set; } = 1000.0F;
+        private float MaxWeaponWeight { get; set; } = 1000.0F;
 
-        public int[] WeaponRequirement { get; set; } = [99, 99, 99, 99, 99];
+        private int[] WeaponRequirement { get; set; } = [99, 99, 99, 99, 99];
+
+        private float[] WeaponCorrect { get; set; } = [999.0F, 999.0F, 999.0F, 999.0F, 999.0F];
 
         public MainWindow()
         {
@@ -32,15 +34,16 @@ namespace Elden_Ring_Param_Randomizer
             TalkParamMsgId.Content = Strings.Talk_Param_Message_;
             EquipParamWeaponWeight.Content = Strings.EquipParamWeapon_Weight_;
             EquipParamWeaponRequirement.Content = Strings.EquipParamWeapon_Requirement_;
+            EquipParamWeaponScaling.Content = Strings.EquipParamWeapon_Scaling_;
         }
 
-        public void UpdateConsole(string text)
+        private void UpdateConsole(string text)
         {
             Console.Text = text;
             Dispatcher.Invoke(() => { }, DispatcherPriority.Background);
         }
 
-        private void Browse_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Browse_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -76,13 +79,14 @@ namespace Elden_Ring_Param_Randomizer
 
             if (TalkParamMsgId.IsChecked == false
                 && EquipParamWeaponWeight.IsChecked == false
-                && EquipParamWeaponRequirement.IsChecked == false)
+                && EquipParamWeaponRequirement.IsChecked == false
+                && EquipParamWeaponScaling.IsChecked == false)
             {
                 MessageBox.Show(Strings.NoParamSelected, Strings.Error);
                 return;
             }
 
-            int rngSeed = (int)Seed.Value;
+            int rngSeed = (int)Seed.Value!;
             if (rngSeed == -1)
             {
                 Random newSeed = new Random();
@@ -96,9 +100,10 @@ namespace Elden_Ring_Param_Randomizer
 
             BND4 paramBnd = SFUtil.DecryptERRegulation(RegulationPath);
 
-            if (TalkParamMsgId.IsChecked == true) paramBnd = randTalk(rng, paramBnd);
-            if (EquipParamWeaponWeight.IsChecked == true) paramBnd = randWeaponWeight(rng, paramBnd);
-            if (EquipParamWeaponRequirement.IsChecked == true) paramBnd = randWeaponRequirement(rng, paramBnd);
+            if (TalkParamMsgId.IsChecked == true) paramBnd = RandTalk(rng, paramBnd);
+            if (EquipParamWeaponWeight.IsChecked == true) paramBnd = RandWeaponWeight(rng, paramBnd);
+            if (EquipParamWeaponRequirement.IsChecked == true) paramBnd = RandWeaponRequirement(rng, paramBnd);
+            if (EquipParamWeaponScaling.IsChecked == true) paramBnd = RandWeaponCorrect(rng, paramBnd);
 
             SFUtil.EncryptERRegulation(RegulationPath, paramBnd);
 
@@ -109,24 +114,77 @@ namespace Elden_Ring_Param_Randomizer
             MessageBox.Show(Strings.All_done, Strings.Randomization_Finished);
         }
 
-        private BND4 randWeaponRequirement(Random rng, BND4 paramBnd)
+        private BND4 RandWeaponCorrect(Random rng, BND4 paramBnd)
+        {
+            Dictionary<string, PARAM> paramList = new();
+            
+            UpdateConsole(Strings.Loading_ParamDefs);
+
+            List<PARAMDEF> paramDefs = new List<PARAMDEF>();
+            PARAMDEF paramDef = PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
+            paramDefs.Add(paramDef);
+            
+            UpdateConsole(Strings.Handling_Params);
+
+            foreach (BinderFile file in paramBnd.Files)
+            {
+                string name = Path.GetFileNameWithoutExtension(file.Name);
+                PARAM param = PARAM.Read(file.Bytes);
+
+                if (param.ApplyParamdefCarefully(paramDefs))
+                {
+                    paramList[name] = param;
+                }
+            }
+            
+            UpdateConsole(Strings.Modifying_Params);
+
+            PARAM weaponParam = paramList["EquipParamWeapon"];
+
+            foreach (PARAM.Row row in weaponParam.Rows)
+            {
+                if ((int)row["sortId"].Value == 9999999)
+                {
+                    continue;
+                }
+                
+                row["correctStrength"].Value = rng.Next(0, (int)(WeaponCorrect[0] * 10) + 1) / 10;
+                row["correctAgility"].Value = rng.Next(0, (int)(WeaponCorrect[1] * 10) + 1) / 10;
+                row["correctMagic"].Value = rng.Next(0, (int)(WeaponCorrect[2] * 10) + 1) / 10;
+                row["correctFaith"].Value = rng.Next(0, (int)(WeaponCorrect[3] * 10) + 1) / 10;
+                row["correctLuck"].Value = rng.Next(0, (int)(WeaponCorrect[4] * 10) + 1) / 10;
+            }
+            
+            UpdateConsole(Strings.Exporting_Params);
+
+            foreach (BinderFile file in paramBnd.Files)
+            {
+                string name = Path.GetFileNameWithoutExtension(file.Name);
+                if (paramList.ContainsKey(name))
+                    file.Bytes = paramList[name].Write();
+            }
+
+            return paramBnd;
+        }
+
+        private BND4 RandWeaponRequirement(Random rng, BND4 paramBnd)
         {
             Dictionary<string, PARAM> paramList = new();
 
             UpdateConsole(Strings.Loading_ParamDefs);
 
-            List<PARAMDEF> paramdefs = new List<PARAMDEF>();
-            PARAMDEF paramdef = PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
-            paramdefs.Add(paramdef);
+            List<PARAMDEF> paramDefs = new List<PARAMDEF>();
+            PARAMDEF paramDef = PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
+            paramDefs.Add(paramDef);
 
             UpdateConsole(Strings.Handling_Params);
 
             foreach (BinderFile file in paramBnd.Files)
             {
                 string name = Path.GetFileNameWithoutExtension(file.Name);
-                var param = PARAM.Read(file.Bytes);
+                PARAM param = PARAM.Read(file.Bytes);
 
-                if (param.ApplyParamdefCarefully(paramdefs))
+                if (param.ApplyParamdefCarefully(paramDefs))
                     paramList[name] = param;
             }
 
@@ -134,10 +192,8 @@ namespace Elden_Ring_Param_Randomizer
 
             PARAM weaponParam = paramList["EquipParamWeapon"];
 
-            for (int i = 0; i < weaponParam.Rows.Count; i++)
+            foreach (PARAM.Row row in weaponParam.Rows)
             {
-                PARAM.Row row = weaponParam.Rows[i];
-
                 if ((int)row["sortId"].Value == 9999999)
                 {
                     continue;
@@ -162,7 +218,7 @@ namespace Elden_Ring_Param_Randomizer
             return paramBnd;
         }
 
-        private BND4 randWeaponWeight(Random rng, BND4 paramBnd)
+        private BND4 RandWeaponWeight(Random rng, BND4 paramBnd)
         {
             Dictionary<string, PARAM> paramList = new();
 
@@ -177,7 +233,7 @@ namespace Elden_Ring_Param_Randomizer
             foreach (BinderFile file in paramBnd.Files)
             {
                 string name = Path.GetFileNameWithoutExtension(file.Name);
-                var param = PARAM.Read(file.Bytes);
+                PARAM param = PARAM.Read(file.Bytes);
 
                 if (param.ApplyParamdefCarefully(paramDefs))
                     paramList[name] = param;
@@ -187,10 +243,8 @@ namespace Elden_Ring_Param_Randomizer
 
             PARAM weaponParam = paramList["EquipParamWeapon"];
 
-            for (int i = 0; i < weaponParam.Rows.Count; i++)
+            foreach (PARAM.Row row in weaponParam.Rows)
             {
-                PARAM.Row row = weaponParam.Rows[i];
-
                 if ((int)row["sortId"].Value == 9999999)
                 {
                     continue;
@@ -211,7 +265,7 @@ namespace Elden_Ring_Param_Randomizer
             return paramBnd;
         }
 
-        private BND4 randTalk(Random rng, BND4 paramBnd)
+        private BND4 RandTalk(Random rng, BND4 paramBnd)
         {
             Dictionary<string, PARAM> paramList = new();
 
@@ -239,10 +293,8 @@ namespace Elden_Ring_Param_Randomizer
             PARAM talkParam = paramList["TalkParam"];
 
             List<int> goodIds = new();
-            for (int i = 0; i < talkParam.Rows.Count; i++)
+            foreach (PARAM.Row row in talkParam.Rows)
             {
-                PARAM.Row row = talkParam.Rows[i];
-
                 if (row.ID is 100 or 200)
                 {
                     continue;
@@ -255,10 +307,8 @@ namespace Elden_Ring_Param_Randomizer
                 row["msgId_female"].Value = -1;
             }
 
-            for (int i = 0; i < talkParam.Rows.Count; i++)
+            foreach (PARAM.Row row in talkParam.Rows)
             {
-                PARAM.Row row = talkParam.Rows[i];
-
                 if (row.ID is 100 or 200)
                 {
                     continue;

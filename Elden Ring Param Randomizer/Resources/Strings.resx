@@ -121,7 +121,7 @@
     <value>Elden Ring Param Randomizer</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>0.1.0</value>
+    <value>v0.1.0</value>
   </data>
   <data name="Waiting for regulation" xml:space="preserve">
     <value>Waiting for regulation</value>
@@ -221,5 +221,8 @@ Are you sure you want to load the Regulation.bin you selected?</value>
   </data>
   <data name="NoOodleFoundException" xml:space="preserve">
     <value>Please put oo2core_6_win64.dll into randomizer folder.</value>
+  </data>
+  <data name="EquipParamWeapon(Scaling)" xml:space="preserve">
+    <value>EquipParamWeapon(Scaling)</value>
   </data>
 </root>
