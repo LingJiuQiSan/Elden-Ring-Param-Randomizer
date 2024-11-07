@@ -229,4 +229,7 @@
   <data name="Weapon Scaling Setting" xml:space="preserve">
     <value>随机化武器补正上限设置</value>
   </data>
+  <data name="The heavier the weapon, the smaller the chance of a random hit." xml:space="preserve">
+    <value>武器重量越重随机到概率越小。</value>
+  </data>
 </root>

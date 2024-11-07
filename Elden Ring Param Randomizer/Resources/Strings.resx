@@ -228,4 +228,7 @@ Are you sure you want to load the Regulation.bin you selected?</value>
   <data name="Weapon Scaling Setting" xml:space="preserve">
     <value>Weapon Scaling Setting</value>
   </data>
+  <data name="The heavier the weapon, the smaller the chance of a random hit." xml:space="preserve">
+    <value>The heavier the weapon, the smaller the chance of a random hit.</value>
+  </data>
 </root>

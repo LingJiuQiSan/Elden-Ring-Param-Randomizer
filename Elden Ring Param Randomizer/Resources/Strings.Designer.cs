@@ -342,6 +342,15 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The heavier the weapon, the smaller the chance of a random hit..
+        /// </summary>
+        internal static string The_heavier_the_weapon__the_smaller_the_chance_of_a_random_hit_ {
+            get {
+                return ResourceManager.GetString("The heavier the weapon, the smaller the chance of a random hit.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to v0.1.2-Untested.
         /// </summary>
         internal static string Version {

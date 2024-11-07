@@ -14,10 +14,10 @@ namespace Elden_Ring_Param_Randomizer
     /// </summary>
     public partial class MainWindow
     {
-
         private string RegulationPath { get; set; } = "";
 
         private float MaxWeaponWeight { get; set; } = 1000.0F;
+        private bool HeavierWeaponSmallerProbability { get; set; } = true;
 
         private int[] WeaponRequirement { get; set; } = [99, 99, 99, 99, 99];
 
@@ -117,13 +117,14 @@ namespace Elden_Ring_Param_Randomizer
         private BND4 RandWeaponCorrect(Random rng, BND4 paramBnd)
         {
             Dictionary<string, PARAM> paramList = new();
-            
+
             UpdateConsole(Strings.Loading_ParamDefs);
 
             List<PARAMDEF> paramDefs = new List<PARAMDEF>();
-            PARAMDEF paramDef = PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
+            PARAMDEF paramDef =
+                PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
             paramDefs.Add(paramDef);
-            
+
             UpdateConsole(Strings.Handling_Params);
 
             foreach (BinderFile file in paramBnd.Files)
@@ -136,7 +137,7 @@ namespace Elden_Ring_Param_Randomizer
                     paramList[name] = param;
                 }
             }
-            
+
             UpdateConsole(Strings.Modifying_Params);
 
             PARAM weaponParam = paramList["EquipParamWeapon"];
@@ -147,14 +148,14 @@ namespace Elden_Ring_Param_Randomizer
                 {
                     continue;
                 }
-                
+
                 row["correctStrength"].Value = rng.Next(0, (int)(WeaponCorrect[0] * 10) + 1) / 10;
                 row["correctAgility"].Value = rng.Next(0, (int)(WeaponCorrect[1] * 10) + 1) / 10;
                 row["correctMagic"].Value = rng.Next(0, (int)(WeaponCorrect[2] * 10) + 1) / 10;
                 row["correctFaith"].Value = rng.Next(0, (int)(WeaponCorrect[3] * 10) + 1) / 10;
                 row["correctLuck"].Value = rng.Next(0, (int)(WeaponCorrect[4] * 10) + 1) / 10;
             }
-            
+
             UpdateConsole(Strings.Exporting_Params);
 
             foreach (BinderFile file in paramBnd.Files)
@@ -174,7 +175,8 @@ namespace Elden_Ring_Param_Randomizer
             UpdateConsole(Strings.Loading_ParamDefs);
 
             List<PARAMDEF> paramDefs = new List<PARAMDEF>();
-            PARAMDEF paramDef = PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
+            PARAMDEF paramDef =
+                PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
             paramDefs.Add(paramDef);
 
             UpdateConsole(Strings.Handling_Params);
@@ -225,7 +227,8 @@ namespace Elden_Ring_Param_Randomizer
             UpdateConsole(Strings.Loading_ParamDefs);
 
             List<PARAMDEF> paramDefs = new List<PARAMDEF>();
-            PARAMDEF paramDef = PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
+            PARAMDEF paramDef =
+                PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
             paramDefs.Add(paramDef);
 
             UpdateConsole(Strings.Handling_Params);
@@ -250,7 +253,9 @@ namespace Elden_Ring_Param_Randomizer
                     continue;
                 }
 
-                row["weight"].Value = rng.Next(0, (int)(MaxWeaponWeight * 10) + 1) / 10.0;
+                row["weight"].Value = HeavierWeaponSmallerProbability
+                    ? rng.Next(0, (int)(MaxWeaponWeight * 10) + 1) / 10.0
+                    : (int)Utils.GetExponentiallyDistributedRandom((int)(MaxWeaponWeight * 10)) / 10.0;
             }
 
             UpdateConsole(Strings.Exporting_Params);
@@ -339,10 +344,11 @@ namespace Elden_Ring_Param_Randomizer
 
         private void EquipParamWeaponWeight_OnMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WeaponWeight weaponWeight = new WeaponWeight(MaxWeaponWeight);
+            WeaponWeight weaponWeight = new WeaponWeight(MaxWeaponWeight, HeavierWeaponSmallerProbability);
             if (weaponWeight.ShowDialog() == true)
             {
                 MaxWeaponWeight = weaponWeight.MaxWeaponWeight;
+                HeavierWeaponSmallerProbability = weaponWeight.HeavierWeaponSmallerProbability;
             }
         }
 

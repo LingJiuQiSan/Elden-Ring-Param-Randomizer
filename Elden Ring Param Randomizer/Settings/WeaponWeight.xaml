@@ -7,12 +7,13 @@
         xmlns:mahspps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         Title="Weapon Weight Setting"
-        Height="140"
+        Height="170"
         Width="420"
         FontSize="14">
     <Canvas>
         <TextBlock x:Name="Description" TextAlignment="Center" TextWrapping="Wrap" Text="Max weight(0.1~1000.0)" Width="380" Height="20" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <mahspps:NumericUpDown x:Name ="Range" Minimum="0.1" Maximum="1000.0" Value="0.1" Interval="0.1" Width ="380" Canvas.Left="10" Canvas.Top="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <CheckBox x:Name="HeavierWeaponSmallerProbabilityCheckBox" Content="The heavier the weapon, the smaller the chance of a random hit." Canvas.Left="10" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True"/>
         <Button x:Name="Confirm" Content="Confirm" Canvas.Left="10" Canvas.Bottom="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="380" Height="20" Click="Confirm_OnClick"/>
     </Canvas>
 </Window>
