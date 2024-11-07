@@ -17,6 +17,7 @@ public partial class WeaponCorrect
         Intelligence.Text = Strings.Intelligence;
         Faith.Text = Strings.Faith;
         Arcane.Text = Strings.Arcane;
+        Confirm.Content = Strings.Confirm;
     }
 
     private void Confirm_OnClick(object sender, RoutedEventArgs e)
