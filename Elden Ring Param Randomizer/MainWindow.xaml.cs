@@ -21,7 +21,7 @@ namespace Elden_Ring_Param_Randomizer
 
         private int[] WeaponRequirement { get; set; } = [99, 99, 99, 99, 99];
 
-        private float[] WeaponCorrect { get; set; } = [999.0F, 999.0F, 999.0F, 999.0F, 999.0F];
+        private float[] WeaponCorrect { get; set; } = [200.0F, 200.0F, 200.0F, 200.0F, 200.0F];
 
         public MainWindow()
         {
