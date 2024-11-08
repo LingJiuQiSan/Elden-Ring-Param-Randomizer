@@ -2,7 +2,7 @@ using MathNet.Numerics.Distributions;
 
 namespace Elden_Ring_Param_Randomizer;
 
-public class Utils
+public abstract class Utils
 {
     public static double GetExponentiallyDistributedRandom(int maxValue)
     {

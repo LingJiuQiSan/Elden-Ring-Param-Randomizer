@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Elden_Ring_Param_Randomizer"
         xmlns:mahspps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         Title="Elden Ring Param Randomizer"
@@ -14,15 +13,32 @@
         HorizontalScrollBarVisibility="Auto"
         VerticalScrollBarVisibility="Auto">
         <Canvas>
-            <TextBlock x:Name="Description" TextAlignment="Center" TextWrapping="Wrap" Text="Right Click CheckBox to Setting" Width="380" Height="30" Canvas.Left="10" Canvas.Bottom="90" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-            <TextBox x:Name="Console" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap" Text="Waiting for regulation" Width="180" Height="30" Canvas.Left="10" Canvas.Bottom="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-            <Button x:Name="Browse" Content="Browse" Canvas.Right="10" Canvas.Bottom="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="180" Height="30" Click="Browse_Click"/>
-            <Button x:Name="Randomize" Content="Randomize" Canvas.Right="10" Canvas.Bottom="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="180" Height="30" Click="Randomize_OnClick"/>
-            <mahspps:NumericUpDown x:Name ="Seed" Minimum="-1" Maximum="2147483647" Value="-1" Interval="1" Width ="180" Canvas.Left="10" Canvas.Bottom="10" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Center"/>
-            <CheckBox x:Name="TalkParamMsgId" Content="Talk Param(Message)" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="TalkParamMsgId_OnMouseRightButtonDown"/>
-            <CheckBox x:Name="EquipParamWeaponWeight" Content="EquipParamWeapon(Weight)" Canvas.Left="10" Canvas.Top="40" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="EquipParamWeaponWeight_OnMouseRightButtonDown"/>
-            <CheckBox x:Name="EquipParamWeaponRequirement" Content="EquipParamWeapon(Requirement)" Canvas.Left="10" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="False" MouseRightButtonDown="EquipParamWeaponRequirement_OnMouseRightButtonDown"></CheckBox>
-            <CheckBox x:Name="EquipParamWeaponScaling" Content="EquipParamWeapon(Scaling)" Canvas.Left="10" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center" Width="380" Height="20" IsChecked="True" MouseRightButtonDown="EquipParamWeaponScaling_OnMouseRightButtonDown"></CheckBox>
+            <TextBlock x:Name="Description" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"
+                       Text="Right Click CheckBox to Setting" Width="380" Height="20" Canvas.Left="10"
+                       Canvas.Bottom="90" />
+            <TextBox x:Name="Console" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"
+                     Text="Waiting for regulation" Width="180" Height="30" Canvas.Left="10" Canvas.Bottom="50"
+                     VerticalContentAlignment="Center" />
+            <Button x:Name="Browse" Content="Browse" Canvas.Right="10" Canvas.Bottom="50" Width="180" Height="30"
+                    Click="Browse_Click" />
+            <Button x:Name="Randomize" Content="Randomize" Canvas.Right="10" Canvas.Bottom="10" Width="180" Height="30"
+                    Click="Randomize_OnClick" />
+            <mahspps:NumericUpDown x:Name="Seed" Minimum="-1" Maximum="2147483647" Value="-1" Interval="1" Width="180"
+                                   Canvas.Left="10" Canvas.Bottom="10" Height="30" TextAlignment="Center" />
+            <CheckBox x:Name="TalkParamMsgId" Content="Talk Param(Message)" Canvas.Left="10" Canvas.Top="10"
+                      Width="380" Height="20" IsChecked="True"
+                      MouseRightButtonDown="TalkParamMsgId_OnMouseRightButtonDown" />
+            <CheckBox x:Name="EquipParamWeaponWeight" Content="EquipParamWeapon(Weight)" Canvas.Left="10"
+                      Canvas.Top="40" Width="380" Height="20" IsChecked="True"
+                      MouseRightButtonDown="EquipParamWeaponWeight_OnMouseRightButtonDown" />
+            <CheckBox x:Name="EquipParamWeaponRequirement" Content="EquipParamWeapon(Requirement)" Canvas.Left="10"
+                      Canvas.Top="70" Width="380" Height="20" IsChecked="False"
+                      MouseRightButtonDown="EquipParamWeaponRequirement_OnMouseRightButtonDown" />
+            <CheckBox x:Name="EquipParamWeaponScaling" Content="EquipParamWeapon(Scaling)" Canvas.Left="10"
+                      Canvas.Top="100" Width="380" Height="20" IsChecked="True"
+                      MouseRightButtonDown="EquipParamWeaponScaling_OnMouseRightButtonDown" />
+            <CheckBox x:Name="EquipParamWeaponDamage" Content="EquipParamWeapon(AttackBase)" Canvas.Left="10"
+                      Canvas.Top="130" Width="380" Height="20" IsChecked="True" />
         </Canvas>
     </ScrollViewer>
 </Window>

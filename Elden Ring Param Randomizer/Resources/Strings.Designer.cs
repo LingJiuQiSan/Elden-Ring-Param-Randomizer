@@ -123,6 +123,15 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to EquipParamWeapon(AttackBase).
+        /// </summary>
+        internal static string EquipParamWeapon_AttackBase_ {
+            get {
+                return ResourceManager.GetString("EquipParamWeapon(AttackBase)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EquipParamWeapon(Requirement).
         /// </summary>
         internal static string EquipParamWeapon_Requirement_ {
@@ -195,11 +204,29 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fire:.
+        /// </summary>
+        internal static string Fire {
+            get {
+                return ResourceManager.GetString("Fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Handling Params.
         /// </summary>
         internal static string Handling_Params {
             get {
                 return ResourceManager.GetString("Handling Params", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holy:.
+        /// </summary>
+        internal static string Holy {
+            get {
+                return ResourceManager.GetString("Holy", resourceCulture);
             }
         }
         
@@ -213,11 +240,29 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lightning:.
+        /// </summary>
+        internal static string Lightning {
+            get {
+                return ResourceManager.GetString("Lightning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading ParamDefs.
         /// </summary>
         internal static string Loading_ParamDefs {
             get {
                 return ResourceManager.GetString("Loading ParamDefs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magic:.
+        /// </summary>
+        internal static string Magic {
+            get {
+                return ResourceManager.GetString("Magic", resourceCulture);
             }
         }
         
@@ -281,6 +326,15 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         internal static string OpenFileDialogTitle {
             get {
                 return ResourceManager.GetString("OpenFileDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Physics:.
+        /// </summary>
+        internal static string Physics {
+            get {
+                return ResourceManager.GetString("Physics", resourceCulture);
             }
         }
         
@@ -369,7 +423,16 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weapon Requirement Setting.
+        ///   Looks up a localized string similar to Weapon Base Attack Upper Limit Setting.
+        /// </summary>
+        internal static string Weapon_Base_Attack_Setting {
+            get {
+                return ResourceManager.GetString("Weapon Base Attack Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weapon Requirement Upper Limit Setting.
         /// </summary>
         internal static string Weapon_Requirement_Setting {
             get {
@@ -378,7 +441,7 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weapon Scaling Setting.
+        ///   Looks up a localized string similar to Weapon Scaling Upper Limit Setting.
         /// </summary>
         internal static string Weapon_Scaling_Setting {
             get {
@@ -387,7 +450,7 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weapon Weight Setting.
+        ///   Looks up a localized string similar to Weapon Weight Upper Limit Setting.
         /// </summary>
         internal static string Weapon_Weight_Setting {
             get {

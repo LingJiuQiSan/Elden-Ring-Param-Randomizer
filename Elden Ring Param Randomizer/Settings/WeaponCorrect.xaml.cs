@@ -5,9 +5,8 @@ namespace Elden_Ring_Param_Randomizer.Settings;
 
 public partial class WeaponCorrect
 {
-    
-    public float[] Scaling = new float[5];
-    
+    public float[] Scaling;
+
     public WeaponCorrect(float[] scaling)
     {
         InitializeComponent();

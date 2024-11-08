@@ -1,39 +1,38 @@
-﻿<Window x:Class="Elden_Ring_Param_Randomizer.Settings.WeaponRequirement"
+<Window x:Class="Elden_Ring_Param_Randomizer.Settings.WeaponBaseDamage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Elden_Ring_Param_Randomizer"
         xmlns:mahspps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Weapon Requirement Setting"
+        Title="Weapon Base Attack Upper Limit Setting"
         Height="230"
         Width="420"
         FontSize="14">
     <Canvas>
-        <TextBlock x:Name="Strength" TextAlignment="Left" TextWrapping="Wrap" Text="Strength:" Width="120" Height="20"
-                   Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <mahspps:NumericUpDown x:Name="StrengthRange" Minimum="1" Maximum="99" Value="99" Interval="1" Width="240"
+        <TextBlock x:Name="AttackBasePhysics" TextAlignment="Left" TextWrapping="Wrap" Text="Physics:" Width="120"
+                   Height="20" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <mahspps:NumericUpDown x:Name="PhysicsRange" Minimum="1" Maximum="9999" Value="1000" Interval="1" Width="240"
                                Canvas.Left="150" Canvas.Top="10" Height="20" HorizontalAlignment="Left"
                                VerticalAlignment="Bottom" TextAlignment="Center" />
-        <TextBlock x:Name="Dexterity" TextAlignment="Left" TextWrapping="Wrap" Text="Dexterity:" Width="120"
+        <TextBlock x:Name="AttackBaseMagic" TextAlignment="Left" TextWrapping="Wrap" Text="Magic:" Width="120"
                    Height="20" Canvas.Left="10" Canvas.Top="40" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <mahspps:NumericUpDown x:Name="DexterityRange" Minimum="1" Maximum="99" Value="99" Interval="1" Width="240"
+        <mahspps:NumericUpDown x:Name="MagicRange" Minimum="1" Maximum="9999" Value="1000" Interval="1" Width="240"
                                Canvas.Left="150" Canvas.Top="40" Height="20" HorizontalAlignment="Left"
                                VerticalAlignment="Bottom" TextAlignment="Center" />
-        <TextBlock x:Name="Intelligence" TextAlignment="Left" TextWrapping="Wrap" Text="Intelligence:" Width="120"
+        <TextBlock x:Name="AttackBaseFire" TextAlignment="Left" TextWrapping="Wrap" Text="Fire:" Width="120"
                    Height="20" Canvas.Left="10" Canvas.Top="70" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <mahspps:NumericUpDown x:Name="IntelligenceRange" Minimum="1" Maximum="99" Value="99" Interval="1" Width="240"
+        <mahspps:NumericUpDown x:Name="FireRange" Minimum="1" Maximum="9999" Value="1000" Interval="1" Width="240"
                                Canvas.Left="150" Canvas.Top="70" Height="20" HorizontalAlignment="Left"
                                VerticalAlignment="Bottom" TextAlignment="Center" />
-        <TextBlock x:Name="Faith" TextAlignment="Left" TextWrapping="Wrap" Text="Faith:" Width="120" Height="20"
-                   Canvas.Left="10" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <mahspps:NumericUpDown x:Name="FaithRange" Minimum="1" Maximum="99" Value="99" Interval="1" Width="240"
+        <TextBlock x:Name="AttackBaseLightning" TextAlignment="Left" TextWrapping="Wrap" Text="Lightning:" Width="120"
+                   Height="20" Canvas.Left="10" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <mahspps:NumericUpDown x:Name="LightningRange" Minimum="1" Maximum="9999" Value="1000" Interval="1" Width="240"
                                Canvas.Left="150" Canvas.Top="100" Height="20" HorizontalAlignment="Left"
                                VerticalAlignment="Bottom" TextAlignment="Center" />
-        <TextBlock x:Name="Arcane" TextAlignment="Left" TextWrapping="Wrap" Text="Arcane:" Width="120" Height="20"
-                   Canvas.Left="10" Canvas.Top="130" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <mahspps:NumericUpDown x:Name="ArcaneRange" Minimum="1" Maximum="99" Value="99" Interval="1" Width="240"
+        <TextBlock x:Name="AttackBaseHoly" TextAlignment="Left" TextWrapping="Wrap" Text="Holy:" Width="120"
+                   Height="20" Canvas.Left="10" Canvas.Top="130" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <mahspps:NumericUpDown x:Name="HolyRange" Minimum="1" Maximum="9999" Value="1000" Interval="1" Width="240"
                                Canvas.Left="150" Canvas.Top="130" Height="20" HorizontalAlignment="Left"
                                VerticalAlignment="Bottom" TextAlignment="Center" />
         <Button x:Name="Confirm" Content="Confirm" Canvas.Left="10" Canvas.Bottom="10" HorizontalAlignment="Right"
