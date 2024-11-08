@@ -33,13 +33,14 @@ public partial class MainWindow
     private string RegulationPath { get; set; } = "";
 
     private float MaxWeaponWeight { get; set; } = 1000.0F;
+
     private bool HeavierWeaponSmallerProbability { get; set; } = true;
 
     private int[] WeaponRequirement { get; set; } = [99, 99, 99, 99, 99];
 
     private float[] WeaponCorrect { get; set; } = [200.0F, 200.0F, 200.0F, 200.0F, 200.0F];
 
-    private int[] WeaponBaseDamage { get; set; } = [1000, 1000, 1000, 1000, 1000];
+    private int[] WeaponBaseDamage { get; set; } = [200, 200, 200, 200, 200];
 
     private void UpdateConsole(string text)
     {
