@@ -84,7 +84,8 @@ public partial class MainWindow
         if (TalkParamMsgId.IsChecked == false
             && EquipParamWeaponWeight.IsChecked == false
             && EquipParamWeaponRequirement.IsChecked == false
-            && EquipParamWeaponScaling.IsChecked == false)
+            && EquipParamWeaponScaling.IsChecked == false
+            && EquipParamWeaponDamage.IsChecked == false)
         {
             MessageBox.Show(Strings.NoParamSelected, Strings.Error);
             return;
@@ -108,6 +109,7 @@ public partial class MainWindow
         if (EquipParamWeaponWeight.IsChecked == true) paramBnd = RandWeaponWeight(rng, paramBnd);
         if (EquipParamWeaponRequirement.IsChecked == true) paramBnd = RandWeaponRequirement(rng, paramBnd);
         if (EquipParamWeaponScaling.IsChecked == true) paramBnd = RandWeaponCorrect(rng, paramBnd);
+        if (EquipParamWeaponDamage.IsChecked == true) paramBnd = RandWeaponBaseDamage(rng, paramBnd);
 
         SFUtil.EncryptERRegulation(RegulationPath, paramBnd);
 
@@ -116,6 +118,54 @@ public partial class MainWindow
         UpdateConsole(Strings.Finished);
         SystemSounds.Exclamation.Play();
         MessageBox.Show(Strings.All_done, Strings.Randomization_Finished);
+    }
+
+    private BND4 RandWeaponBaseDamage(Random rng, BND4 paramBnd)
+    {
+        Dictionary<string, PARAM> paramList = new();
+
+        UpdateConsole(Strings.Loading_ParamDefs);
+
+        var paramDefs = new List<PARAMDEF>();
+        var paramDef =
+            PARAMDEF.XmlDeserialize($@"{Directory.GetCurrentDirectory()}\Paramdex\EquipParamWeapon.xml");
+        paramDefs.Add(paramDef);
+
+        UpdateConsole(Strings.Handling_Params);
+
+        foreach (var file in paramBnd.Files)
+        {
+            var name = Path.GetFileNameWithoutExtension(file.Name);
+            var param = PARAM.Read(file.Bytes);
+
+            if (param.ApplyParamdefCarefully(paramDefs)) paramList[name] = param;
+        }
+
+        UpdateConsole(Strings.Modifying_Params);
+
+        var weaponParam = paramList["EquipParamWeapon"];
+
+        foreach (var row in weaponParam.Rows)
+        {
+            if ((int)row["sortId"].Value == 9999999) continue;
+
+            row["attackBasePhysics"].Value = rng.Next(0, WeaponBaseDamage[0] + 1);
+            row["attackBaseMagic"].Value = rng.Next(0, WeaponBaseDamage[1] + 1);
+            row["attackBaseFire"].Value = rng.Next(0, WeaponBaseDamage[2] + 1);
+            row["attackBaseThunder"].Value = rng.Next(0, WeaponBaseDamage[3] + 1);
+            row["attackBaseDark"].Value = rng.Next(0, WeaponBaseDamage[4] + 1);
+        }
+
+        UpdateConsole(Strings.Exporting_Params);
+
+        foreach (var file in paramBnd.Files)
+        {
+            var name = Path.GetFileNameWithoutExtension(file.Name);
+            if (paramList.ContainsKey(name))
+                file.Bytes = paramList[name].Write();
+        }
+
+        return paramBnd;
     }
 
     private BND4 RandWeaponCorrect(Random rng, BND4 paramBnd)
@@ -342,5 +392,11 @@ public partial class MainWindow
     {
         var correct = new WeaponCorrect(WeaponCorrect);
         if (correct.ShowDialog() == true) WeaponCorrect = correct.Scaling;
+    }
+
+    private void EquipParamWeaponDamage_OnMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        var baseDamage = new WeaponBaseDamage(WeaponBaseDamage);
+        if (baseDamage.ShowDialog() == true) WeaponBaseDamage = baseDamage.AttackBase;
     }
 }

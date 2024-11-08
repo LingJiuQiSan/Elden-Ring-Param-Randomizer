@@ -123,7 +123,7 @@ namespace Elden_Ring_Param_Randomizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EquipParamWeapon(AttackBase).
+        ///   Looks up a localized string similar to EquipParamWeapon(AttackBaseDamage).
         /// </summary>
         internal static string EquipParamWeapon_AttackBase_ {
             get {

@@ -37,8 +37,9 @@
             <CheckBox x:Name="EquipParamWeaponScaling" Content="EquipParamWeapon(Scaling)" Canvas.Left="10"
                       Canvas.Top="100" Width="380" Height="20" IsChecked="True"
                       MouseRightButtonDown="EquipParamWeaponScaling_OnMouseRightButtonDown" />
-            <CheckBox x:Name="EquipParamWeaponDamage" Content="EquipParamWeapon(AttackBase)" Canvas.Left="10"
-                      Canvas.Top="130" Width="380" Height="20" IsChecked="True" />
+            <CheckBox x:Name="EquipParamWeaponDamage" Content="EquipParamWeapon(AttackBaseDamage)" Canvas.Left="10"
+                      Canvas.Top="130" Width="380" Height="20" IsChecked="True"
+                      MouseRightButtonDown="EquipParamWeaponDamage_OnMouseRightButtonDown" />
         </Canvas>
     </ScrollViewer>
 </Window>
