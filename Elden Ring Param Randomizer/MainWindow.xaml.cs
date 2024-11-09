@@ -38,7 +38,7 @@ public partial class MainWindow
 
     private int[] WeaponRequirement { get; set; } = [99, 99, 99, 99, 99];
 
-    private float[] WeaponCorrect { get; set; } = [200.0F, 200.0F, 200.0F, 200.0F, 200.0F];
+    private float[] WeaponCorrect { get; set; } = [50.0F, 50.0F, 50.0F, 50.0F, 50.0F];
 
     private int[] WeaponBaseDamage { get; set; } = [200, 200, 200, 200, 200];
 
