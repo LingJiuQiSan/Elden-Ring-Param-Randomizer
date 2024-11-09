@@ -32,7 +32,7 @@ public partial class MainWindow
 
     private string RegulationPath { get; set; } = "";
 
-    private float MaxWeaponWeight { get; set; } = 1000.0F;
+    private float MaxWeaponWeight { get; set; } = 30.0F;
 
     private bool HeavierWeaponSmallerProbability { get; set; } = true;
 
